@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Add Employee</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		
+		<div class="container">
+		
+			<h9>Add New  Register Employee</h9>
+			<hr/>
+			
+			<form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+				
+				<input type="text" th:field="*{name}" class="form-control col-8 mb-4" placeholder="Enter Name" />
+				<input type="text" th:field="*{email}" class="form-control col-8 mb-4" placeholder="Enter Email" />
+				<input type="text" th:field="*{course}" class="form-control col-8 mb-4" placeholder="Enter Course" />
+				<input type="text" th:field="*{skill}" class="form-control col-8 mb-4" placeholder="Enter skill" />
+			    <input type="text" th:field="*{age}" class="form-control col-8 mb-4" placeholder="Enter Age" />
+				<input type="text" th:field="*{rating}" class="form-control col-8 mb-4" placeholder="Enter Rating" />
+				<input type="text" th:field="*{gender}" class="form-control col-8 mb-4" placeholder="Enter Gender" />
+				<input type="text" th:field="*{mobile}" class="form-control col-8 mb-4" placeholder="Enter Mobile" />
+				<input type="text" th:field="*{address}" class="form-control col-8 mb-4" placeholder="Enter Address" />
+				
+				<button type="submit" class="btn btn-primary col-2">Save</button>
+				
+				<input type="hidden" th:field="*{id}" />
+				
+			</form>
+			<hr/>
+			<a th:href="@{/list}">Back to list</a>
+		</div>
+		
+	</body>
+</html>
